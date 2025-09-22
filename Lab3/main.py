@@ -1,4 +1,4 @@
-from Lab3.lab_chat import get_channel, get_peer_node, join_group, chat_task
+from lab_chatt import get_channel, get_peer_node, join_group, chat_task
 
 def text_reset(text):
     text = text.upper()
@@ -22,9 +22,10 @@ def get_message():
 def initialize_chat():
     name = get_username()
     group = get_group()
-    join_group(name, group)
+    node = get_peer_node("Some name")
+    join_group(node, group)
 
-    return get_channel(name, group)
+    return get_channel(node, group)
 
 def start_chat():
     channel = initialize_chat()
